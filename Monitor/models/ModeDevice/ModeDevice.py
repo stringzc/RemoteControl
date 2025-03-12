@@ -5,8 +5,8 @@ from Monitor.models.Mode.Mode import Mode
 
 
 class ModeDevice(models.Model):
-    mode = models.ForeignKey(Mode, on_delete=models.CASCADE)
-    device = models.ForeignKey(Device, on_delete=models.CASCADE)
+    mode_id = models.ForeignKey(Mode, on_delete=models.CASCADE)
+    Device_id = models.ForeignKey(Device, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ('mode', 'device')  # 确保每个模式与设备的组合唯一
+        unique_together = ('mode_id', 'Device_id')  # 确保每个模式与设备的组合唯一

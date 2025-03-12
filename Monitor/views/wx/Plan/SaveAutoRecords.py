@@ -5,12 +5,9 @@ from rest_framework.views import APIView
 from Monitor.authentication import TokenAuth
 
 
-class getPhoneNumber(APIView):
+class SaveAutoRecords(APIView):
     authentication_classes = [TokenAuth]
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
-        return JsonResponse({
-            'result': "success",
-            'phoneNumber': request.user.phone_number,
-        })
+    def post(self, r):
+        return JsonResponse({"code": 200})
