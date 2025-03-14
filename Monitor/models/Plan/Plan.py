@@ -9,6 +9,7 @@ class Plan(models.Model):
     active = models.IntegerField(default=0)  # 默认值为0
     icon = models.CharField(max_length=255, null=True)
     useTime = models.IntegerField(default=4)  # 默认值为0
+    plan_device = models.CharField(max_length=255, null=True)  # 方案名称
 
     def __str__(self):
         return self.planid

@@ -16,7 +16,8 @@ def index(request):
     #     updateTime="2023-10-26 09:30:00",
     #     active=1,
     #     icon="GG",
-    #     useTime=4
+    #     useTime=4,
+    #     plan_device='raspberry_001'
     # )
     # new_plan.save()
     return render(request, "web.html")

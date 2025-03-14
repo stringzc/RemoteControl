@@ -13,49 +13,47 @@ class AddPlanInfoWithID(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        plan_id = request.data['deviceCode'][45:90]
+        plan_id = request.data['deviceCode'][45:-45]
         openid = request.user.openid
-        plan = Plan.objects.all()
-        up, created = UserPlan.objects.get_or_create(openid=openid, plan_id=plan_id)
-        if created:
-            decrypted_plan_id = None
-            for i in plan:
-                decrypted_id = decrypt_data(i.planid)
-                if plan_id == decrypted_id:
-                    decrypted_plan_id = i
-            if decrypted_plan_id.useTime > 0:
-                decrypted_plan_id.useTime -= 1
-                decrypted_plan_id.save()
-                up.plan_id = decrypted_plan_id.planid
-                up.save()
+        plan = Plan.objects.filter(planid=plan_id).first()
+        # up, created = UserPlan.objects.get_or_create(openid=openid, plan_id=plan_id)
+        if plan:
+            if plan.useTime > 0:
+                plan.useTime -= 1
+                plan.save()
+                up, created = UserPlan.objects.get_or_create(openid=openid, plan_id=plan_id)
+                if created:
+                    return JsonResponse({
+                        # 'data': {
+                        #     'devices': [
+                        #         {'result': "success",
+                        #          'id': 'savePhoneNumber',
+                        #          'name': '智能灌溉系统',
+                        #          "updateTime": '1717398223000',
+                        #          'active': 1,
+                        #          'icon': 'GG'}],
+                        # }
+                        'device': [
+                            {
+                             'id': plan.planid,
+                             'name': plan.name,
+                             "updateTime": plan.updateTime,
+                             'active': plan.active,
+                             'icon': plan.icon}, ],
+                        'result': "success",
+                    })
+                else:  # 设备全部添加完成
+                    return JsonResponse({
+                        'result': "have",
+                    })
+            else:
                 return JsonResponse({
-                    # 'data': {
-                    #     'devices': [
-                    #         {'result': "success",
-                    #          'id': 'savePhoneNumber',
-                    #          'name': '智能灌溉系统',
-                    #          "updateTime": '1717398223000',
-                    #          'active': 1,
-                    #          'icon': 'GG'}],
-                    # }
-                    'device': [
-                        {
-                         'id': decrypted_plan_id.planid,
-                         'name': decrypted_plan_id.name,
-                         "updateTime": decrypted_plan_id.updateTime,
-                         'active': decrypted_plan_id.active,
-                         'icon': decrypted_plan_id.icon}, ],
-                    'result': "success",
-                })
-            else:  # 设备全部添加完成
-                return JsonResponse({
-                    'result': "fail",
+                    'result': "no",
                 })
         else:
             return JsonResponse({
-                'result': "have",
+                'result': "fail",
             })
-
 
 # def get_plan(request, encrypted_id):
 #     # 查询并解密
