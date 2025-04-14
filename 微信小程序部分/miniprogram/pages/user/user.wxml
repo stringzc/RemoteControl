@@ -1,0 +1,28 @@
+<!-- pages/user/user.wxml -->
+<view class="container">
+  <!-- 个人信息区 -->
+  <view class="profile-section">
+    <view class="avatar-box">
+      <image src="{{userInfo.avatar}}" class="avatar" bindtap="changeAvatar" />
+    </view>
+    <view class="user-info">
+      <text class="username">{{userInfo.nickname}}</text>
+      <text class="bio">{{userInfo.bio || '这个人很懒，什么都没留下'}}</text>
+    </view>
+  </view>
+
+  <!-- 功能操作区 -->
+  <view class="action-section">
+    <view class="action-card" bindtap="navigateToEditProfile">
+      <image src="https://www.aurage.cn/static/bj.svg" class="action-icon" />
+      <text class="action-text">编辑资料</text>
+      <image src="https://www.aurage.cn/static/arrow.svg" class="arrow" />
+    </view>
+
+    <view class="action-card" bindtap="showAddDevicePanel">
+      <image src="https://www.aurage.cn/static/+.svg" class="action-icon" />
+      <text class="action-text">添加设备</text>
+      <image src="https://www.aurage.cn/static/arrow.svg" class="arrow" />
+    </view>
+  </view>
+</view>

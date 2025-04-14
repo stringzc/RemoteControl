@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- 顶部 1/3：设备图像和描述 -->
+  <view class="top-section">
+    <image src="{{url}}" mode="aspectFit" class="device-image"></image>
+    <text class="device-desc">智能电气控制柜\n当前状态：运行中</text>
+  </view>
+
+  <!-- 底部 2/3：控制按钮区域 -->
+  <view class="button-container">
+    <view >
+    <button  disabled="{{isButtonDisabled}}"
+  class="control-btn act-btn"  bindtap="handleActmation">
+      开启灌水
+    </button>
+    <button class="control-btn cancel-btn" bindtap="handleCancelmation">
+      结束灌水
+    </button>
+    </view>
+    <!-- 自动化控制 -->
+    <button class="control-btn auto-btn" bindtap="handleAutomation">
+      自动化控制
+    </button>
+
+    <!-- 个性化控制 -->
+    <button class="control-btn custom-btn" bindtap="handleCustom">
+      个性化控制
+    </button>
+
+    <!-- 设备状态 -->
+    <button class="control-btn status-btn" bindtap="checkStatus">
+      设备状态
+    </button>
+  </view>
+</view>

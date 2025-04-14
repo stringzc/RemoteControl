@@ -1,0 +1,87 @@
+/* pages/index/index.wxss */
+.swiper-container {
+  width: 100%;
+  height: 75vh;
+  position: relative;
+  padding: 20rpx 0;
+}
+
+.enhanced-swiper {
+  width: 92%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 12rpx 24rpx rgba(0,0,0,0.15);
+  transform: scale(0.96);
+  transition: transform 0.3s ease;
+}
+
+.swiper-item-active .slide-wrapper {
+  transform: scale(1);
+  box-shadow: 0 16rpx 32rpx rgba(0,0,0,0.2);
+}
+
+.bordered-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 6rpx solid #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40rpx;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.slide-title {
+  display: block;
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.3);
+}
+
+.slide-desc {
+  color: rgba(255,255,255,0.9);
+  font-size: 28rpx;
+  display: block;
+  line-height: 1.4;
+}
+
+/* 自定义指示器 */
+.custom-indicator {
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16rpx;
+}
+
+.dot {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 48rpx;
+  border-radius: 12rpx;
+  background: #fff;
+}

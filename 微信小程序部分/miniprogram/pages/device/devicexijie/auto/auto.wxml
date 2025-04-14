@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 错误提示 -->
+  <view class="error-message" wx:if="{{errorMessage}}">
+    {{errorMessage}}
+  </view>
+
+  <!-- 固定起始时间选择模块 -->
+  <view class="fixed-start-time-section">
+    <view class="input-group">
+      <label>起始时间：</label>
+      <picker mode="time" value="{{startTime}}" bindchange="setStartTime">
+        <view class="picker">{{startTime || '请选择起始时间'}}</view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <label>结束时间：</label>
+      <picker mode="time" value="{{endTime}}" bindchange="setEndTime">
+        <view class="picker">{{endTime || '请选择结束时间'}}</view>
+      </picker>
+    </view>
+
+    <button class="create-button" bindtap="createRecord">创建记录</button>
+  </view>
+
+  <!-- 显示记录列表 -->
+  <view class="record-list">
+    <view wx:for="{{records}}" wx:key="index" class="record-item">
+      <text>起始时间: {{item.startTime}} 结束时间: {{item.endTime}}</text>
+      <button class="delete-button" bindtap="deleteRecord" data-index="{{index}}">删除</button>
+    </view>
+  </view>
+
+  <!-- 固定底部按钮组 -->
+  <view class="button-group">
+    <button class="save-button" bindtap="saveRecords">保存记录</button>
+    <button class="exit-button" bindtap="exitPage">退出</button>
+  </view>
+</view>

@@ -1,0 +1,120 @@
+/* 页面整体容器 */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8; /* 背景色 */
+  box-sizing: border-box;
+}
+
+/* 添加设备区域 */
+.add-device-area {
+  height: 20vh;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 扫描按钮 */
+.scan-button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  padding: 10rpx;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* 添加动画效果 */
+}
+
+/* 扫描按钮图标 */
+.scan-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 设备列表区域 */
+.device-list {
+  flex: 1;
+  padding: 20rpx 30rpx;
+}
+
+/* 设备项 */
+.device-item {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* 添加动画效果 */
+}
+
+/* 设备图标 */
+.device-icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+  border-radius: 12rpx; /* 圆角效果 */
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.12); /* 图标阴影效果 */
+  transition: transform 0.3s ease-in-out; /* 动画效果 */
+}
+
+/* 设备信息区域 */
+.device-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 设备名称 */
+.device-name {
+  font-size: 34rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+  font-weight: bold; /* 更加突出设备名称 */
+}
+
+/* 设备状态 */
+.device-status {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 更新时间 */
+.update-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+/* 状态指示器 */
+.status-indicator {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #ccc;
+  margin-left: 20rpx;
+  transition: background 0.3s ease, transform 0.3s ease; /* 平滑过渡 */
+}
+
+/* 激活状态指示器 */
+.status-indicator.active {
+  background: #09bb07;
+  transform: scale(1.2); /* 增加激活状态的缩放效果 */
+}
+
+/* 点击状态效果 */
+.device-item:active {
+  transform: scale(0.98); /* 点击时稍微缩小 */
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.15); /* 更强的阴影效果 */
+}
+
+.scan-button:active {
+  transform: scale(0.98); /* 扫描按钮点击效果 */
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.15); /* 点击时更强的阴影效果 */
+}

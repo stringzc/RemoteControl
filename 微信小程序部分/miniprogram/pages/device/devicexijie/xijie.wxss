@@ -1,0 +1,113 @@
+/* 页面整体容器 */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa; /* 淡灰色背景，显得更加高级 */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif; /* 更加现代的字体 */
+}
+
+/* 顶部设备展示区域 */
+.top-section {
+  height: 30vh; /* 增加顶部区域的高度 */
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* 更强的阴影效果，增加层次感 */
+  transition: all 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+/* 顶部图像 */
+.device-image {
+  width: 200rpx; /* 图像大小调整 */
+  height: 200rpx;
+  margin-bottom: 20rpx;
+  border-radius: 50%;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* 圆形图像的阴影 */
+  transition: transform 0.3s ease; /* 添加动画效果 */
+}
+
+.device-desc {
+  text-align: center;
+  font-size: 26rpx;
+  color: #495057; /* 更深的灰色，显得更优雅 */
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* 按钮控制区域 */
+.button-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+/* 按钮样式 */
+.control-btn {
+  padding: 18rpx;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15rpx 0;
+  transition: all 0.3s ease; /* 平滑的过渡效果 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
+  font-weight: bold;
+  width: 100%;
+  background-color: #eeeeee; /* 按钮背景色更柔和 */
+  border: none;
+  outline: none;
+}
+.act-btn{
+  background-color: brown;
+  color: white;
+}
+.cancel-btn{
+  background-color: rgb(25, 53, 70);
+  color: white;
+}
+.auto-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.custom-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.status-btn {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+/* 按钮点击效果 */
+.control-btn:active {
+  opacity: 0.8;
+  transform: scale(0.98); /* 按钮点击时的缩放效果 */
+}
+
+/* 按钮悬停效果 */
+.control-btn:hover {
+  transform: scale(1.05); /* 悬停时放大 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
+}
+
+/* 防止页面溢出，保证页面自适应 */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

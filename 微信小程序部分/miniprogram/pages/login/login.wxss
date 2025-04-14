@@ -1,0 +1,71 @@
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f6f9;
+  padding: 20rpx;
+}
+
+/* 页面标题 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+/* 输入框样式 */
+.phone-input {
+  width: 90%;  /* 输入框宽度调整为 90% */
+  height: 8%;
+  padding: 30rpx;  /* 增加上下内边距，确保 placeholder 不被遮挡 */
+  margin-top: 40rpx;
+  font-size: 36rpx;  /* 增大字体大小 */
+  border-radius: 30rpx;  /* 圆角效果 */
+  border: 1px solid #007bff;  /* 边框颜色调整为蓝色 */
+  background-color: #ffffff;  /* 背景色 */
+  box-sizing: border-box;  /* 确保 padding 和 border 包含在宽度和高度内 */
+  line-height: 60rpx;  /* 增加行高，确保文本不拥挤 */
+  color: #333;  /* 字体颜色 */
+}
+
+/* 输入框中的 placeholder 样式 */
+.phone-input::placeholder {
+  color: #ccc;  /* 提示文字颜色 */
+  font-size: 36rpx;  /* 提示文字大小与输入字体一致 */
+  opacity: 1;  /* 确保 placeholder 可见 */
+}
+
+/* 提交按钮 */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 20rpx 40rpx;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  width: 80%;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 提示信息 */
+.tip {
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 20rpx;
+  color: #888;
+}

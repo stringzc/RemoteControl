@@ -1,0 +1,92 @@
+/* 页面整体容器 */
+.container {
+  padding: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 全屏显示 */
+  box-sizing: border-box; /* 防止溢出 */
+}
+
+/* 列表区域，占大部分屏幕 */
+.list-area {
+  flex: 2; /* 控制列表占2/3的空间 */
+  overflow-y: auto; /* 当内容过多时允许滚动 */
+}
+
+/* 每一行项 */
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  height: 80px; /* 行高设置 */
+}
+
+/* 显示每一行的名称和描述 */
+.item-content {
+  flex: 2; /* 名称和描述占2/3空间 */
+  padding-right: 10px;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #888;
+}
+
+/* 按钮样式 */
+.action-button {
+  padding: 6px 14px; /* 调整按钮大小 */
+  font-size: 14px; /* 按钮文本大小 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+/* 下方显示详情区域 */
+.details-area {
+  flex: 1; /* 详细信息占1/3的空间 */
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* 避免溢出 */
+}
+
+.details-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.details-content text {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.detail-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0px;
+}
+
+/* 防止内容溢出，保证页面自适应 */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

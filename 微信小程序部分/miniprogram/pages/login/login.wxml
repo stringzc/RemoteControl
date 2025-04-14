@@ -1,0 +1,18 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">请输入您的手机号</text>
+    <text class="subtitle">我们需要获取您的手机号以便为您提供更好的服务。</text>
+  </view>
+
+  <!-- 输入框 -->
+  <input class="phone-input" type="number" placeholder="请输入手机号" bindinput="onInputPhoneNumber" />
+
+  <!-- 提交按钮 -->
+  <button class="submit-button" bindtap="submitPhoneNumber">提交</button>
+
+  <!-- 提示信息 -->
+  <view class="tip">
+    <text>我们将严格保护您的隐私，手机号仅用于身份验证。</text>
+  </view>
+</view>

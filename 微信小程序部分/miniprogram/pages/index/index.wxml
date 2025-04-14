@@ -1,0 +1,37 @@
+<!-- pages/index/index.wxml -->
+<view class="swiper-container">
+  <swiper
+    class="enhanced-swiper"
+    autoplay="{{true}}"
+    interval="5000"
+    circular
+    indicator-dots="{{false}}"
+    easing-function="easeOutCubic"
+  >
+    <block wx:for="{{bannerList}}" wx:key="id">
+      <swiper-item>
+        <view class="slide-wrapper">
+          <image 
+            src="{{item.imageUrl}}"
+            class="bordered-image"
+            mode="aspectFill"
+          />
+          <!-- 新增渐变层和文字 -->
+          <view class="gradient-overlay">
+            <text class="slide-title">{{item.title}}</text>
+            <text class="slide-desc">{{item.description}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 自定义指示器 -->
+  <view class="custom-indicator">
+    <block wx:for="{{bannerList}}" wx:key="id">
+      <view 
+        class="dot {{index === currentSwiper ? 'active' : ''}}"
+        data-index="{{index}}"
+      ></view>
+    </block>
+  </view>
+</view>

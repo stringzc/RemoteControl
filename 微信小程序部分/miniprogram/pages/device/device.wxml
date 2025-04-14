@@ -1,0 +1,27 @@
+<!-- pages/device/device.wxml -->
+<view class="container">
+  <!-- 扫码添加区域 -->
+  <view class="add-device-area">
+    <button class="scan-button" bindtap="handleScan">
+      <image src="https://www.aurage.cn/static/scan.gif" class="scan-icon" />
+      <text>添加设备</text>
+    </button>
+  </view>
+
+  <!-- 设备列表滚动区域 -->
+  <scroll-view class="device-list" scroll-y>
+    <view wx:for="{{deviceList}}" 
+      wx:key="id" 
+      class="device-item"
+      bindtap="onDeviceTap"
+      data-id="{{item.id}}">
+      <image src="{{item.icon}}" class="device-icon" />
+      <view class="device-info">
+        <text class="device-name">{{item.name}}</text>
+        <text class="device-status">{{item.status}}</text>
+        <text class="update-time">最后更新：{{item.updateTime}}</text>
+      </view>
+      <view class="status-indicator {{item.active ? 'active' : ''}}"></view>
+    </view>
+  </scroll-view>
+</view>
